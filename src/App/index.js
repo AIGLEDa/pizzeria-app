@@ -3,6 +3,7 @@ import { CssBaseline } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./theme";
 import Header from "../Header";
+import PizzaCard from "../PizzaCard";
 //import CssBaseline from "@material-ui/core/CssBaseline";
 //import "./App.css";
 
@@ -14,6 +15,7 @@ export default function App() {
       <MainContent></MainContent> */}
 
       <Header shoppingCartCount={3} />
+      <PizzaCard name="Reine" />
     </ThemeProvider>
   );
 }
