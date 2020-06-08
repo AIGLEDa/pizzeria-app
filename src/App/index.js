@@ -15,7 +15,11 @@ export default function App() {
       <MainContent></MainContent> */}
 
       <Header shoppingCartCount={3} />
-      <PizzaCard name="Reine" />
+      <PizzaCard
+        name="Reine"
+        ingredients={["Olives", "Tomates", "Champignons"]}
+        price={8.99}
+      />
     </ThemeProvider>
   );
 }
