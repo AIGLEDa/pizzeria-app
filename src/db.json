@@ -1,0 +1,18 @@
+{
+  "pizzas": [
+    {
+      "id": 1,
+      "name": "Reine",
+      "ingredients": ["Olives", "Tomates", "Champignons"],
+      "imageUrl": "https://picsum.photos/350",
+      "price": 8.99
+    },
+    {
+      "id": 2,
+      "name": "Reine",
+      "ingredients": ["Olives", "Tomates", "Champignons"],
+      "imageUrl": "https://picsum.photos/350",
+      "price": 8.99
+    }
+  ]
+}
