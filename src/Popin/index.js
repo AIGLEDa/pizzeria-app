@@ -11,11 +11,12 @@ import {
 //import { fromPairs } from "ramda";
 //import shape from "@material-ui/core/styles/shape";
 
-export default function Popin({ open, title, children, actions }) {
+export default function Popin({ open, title, children, actions, onClose }) {
   return (
     <>
       <Dialog
         open={open}
+        onClose={onClose}
         // onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -58,6 +59,7 @@ Popin.propTypes = {
       onClick: func,
     })
   ),
+  onClose: func,
 };
 
 Popin.defaultProps = {
