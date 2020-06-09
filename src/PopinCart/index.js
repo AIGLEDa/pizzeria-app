@@ -1,41 +1,22 @@
 import React from "react";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Button,
-} from "@material-ui/core";
+//import {} from "@material-ui/core";
 import { bool } from "prop-types";
+import Popin from "../Popin";
 
 export default function PopinCart({ open }) {
+  const actions = [{ label: "Annuler" }, { label: "Commander", primary: true }];
+
   return (
-    <Dialog
-      open={open}
-      // onClose={handleClose}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
-    >
-      <DialogTitle id="alert-dialog-title">
-        Passer Commande
-        {"Use Google's location service?"}
-      </DialogTitle>
-      <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-          Récapitulatif des pizzas en commande
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button color="secondary">annuler</Button>
-        <Button color="primary" autoFocus>
-          Agree
-        </Button>
-      </DialogActions>
-    </Dialog>
+    <Popin open={open} title="Passer commande" actions={actions}>
+      Récapitulatif des pizzas en commande
+    </Popin>
   );
 }
 
 PopinCart.protoTypes = {
   open: bool,
+};
+
+PopinCart.defaultProps = {
+  open: false,
 };

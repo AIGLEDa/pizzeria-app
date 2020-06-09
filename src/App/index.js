@@ -22,7 +22,7 @@ const fetchPizzas = () => {
 export default function App() {
   //const [pizzas, setPizzas] = React.useState([]);
   const { status, data } = useQuery("pizzas", fetchPizzas);
-  const [popinCartOpen, setPopinCardOpen] = React.useState(true);
+  const [popinCartOpen, setPopinCardOpen] = React.useState(false);
   // React.useEffect(() => {
   //   fetch("http://localhost:3001/pizzas")
   //     .then((response) => response.json())
