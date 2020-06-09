@@ -31,7 +31,7 @@ export default function App() {
   const hidePopinCart = () => {
     setPopinCardOpen(false);
   };
-  const [cart, { push }] = useList([]);
+  const [cart, { push, reset }] = useList([]);
 
   // React.useEffect(() => {
   //   fetch("http://localhost:3001/pizzas")
@@ -49,7 +49,12 @@ export default function App() {
       />
       {status === "loading" && <CircularProgress />}
       {status === "success" && <PizzaList data={data} addToCart={push} />}
-      <PopinCart open={popinCartOpen} hidePopinCart={hidePopinCart} />
+      <PopinCart
+        open={popinCartOpen}
+        hidePopinCart={hidePopinCart}
+        cart={cart}
+        reset={reset}
+      />
     </ThemeProvider>
   );
 }

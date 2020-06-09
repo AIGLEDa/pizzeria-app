@@ -4,7 +4,6 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   DialogActions,
   Button,
 } from "@material-ui/core";
@@ -22,12 +21,7 @@ export default function Popin({ open, title, children, actions, onClose }) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            {children}
-            {/* Récapitulatif des pizzas en commande */}
-          </DialogContentText>
-        </DialogContent>
+        <DialogContent>{children}</DialogContent>
         <DialogActions>
           {actions.map(({ label, onClick, primary }) => (
             <Button
@@ -51,7 +45,7 @@ export default function Popin({ open, title, children, actions, onClose }) {
 
 Popin.propTypes = {
   open: bool,
-  title: String,
+  title: string,
   children: node.isRequired,
   actions: arrayOf(
     shape({
