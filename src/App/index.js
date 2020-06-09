@@ -6,6 +6,7 @@ import Header from "../Header";
 import PizzaList from "../PizzaList";
 import { useQuery } from "react-query";
 import PopinCart from "../PopinCart";
+import { useList } from "react-use";
 
 //import db from "../db.json";
 
@@ -30,6 +31,8 @@ export default function App() {
   const hidePopinCart = () => {
     setPopinCardOpen(false);
   };
+  const [cart, { push }] = useList([]);
+
   // React.useEffect(() => {
   //   fetch("http://localhost:3001/pizzas")
   //     .then((response) => response.json())
@@ -40,9 +43,12 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <Header shoppingCartCount={3} displayPopinCart={displayPopinCart} />
+      <Header
+        shoppingCartCount={cart.length}
+        displayPopinCart={displayPopinCart}
+      />
       {status === "loading" && <CircularProgress />}
-      {status === "success" && <PizzaList data={data} />}
+      {status === "success" && <PizzaList data={data} addToCart={push} />}
       <PopinCart open={popinCartOpen} hidePopinCart={hidePopinCart} />
     </ThemeProvider>
   );
